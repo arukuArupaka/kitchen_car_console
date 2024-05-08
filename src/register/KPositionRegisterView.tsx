@@ -37,7 +37,7 @@ export default function KPositionRegisterView() {
 
   const goHoem = () => {
     if (window.confirm("入力情報がリセットされます。")) {
-      window.location.href = "/";
+      window.location.href = "kitchen_car_console/";
     }
   };
 
@@ -68,7 +68,7 @@ export default function KPositionRegisterView() {
           "登録しました。この登録は本日に限り有効です。ホーム画面に戻ります。"
         )
       ) {
-        window.location.href = "/";
+        window.location.href = "kitchen_car_console/";
       }
     } else {
       if (
@@ -76,7 +76,7 @@ export default function KPositionRegisterView() {
           "ログインしていません。リダイレクトします。入力情報がリセットされます。"
         )
       ) {
-        window.location.href = "/login";
+        window.location.href = "/kitchen_car_console/login";
       }
     }
   };

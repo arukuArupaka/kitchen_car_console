@@ -33,7 +33,7 @@ export default function KAcountCreateView() {
       console.log(await userCredential.user);
       await sendEmailVerification(await userCredential.user);
       setUserCredential(userCredential);
-      window.location.href = "/";
+      window.location.href = "kitchen_car_console/";
     } catch (e) {
       console.log("catch");
       console.log(e.message);
@@ -81,7 +81,7 @@ export default function KAcountCreateView() {
       <div className="text-center text-red-600">{errorMessage}</div>
       <div className={`flex mt-5 mb-5 ${isMobile ? "flex-col-reverse" : ""}`}>
         <Link
-          to="/"
+          to="/kitchen_car_console"
           className="flex-1 text-center  h-10 leading-10 mix-w-20 px-10"
         >
           キャンセル

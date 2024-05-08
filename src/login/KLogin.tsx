@@ -51,14 +51,14 @@ export default function KLogin() {
         placeholder="パスワードを入力"
       />
       <div className="text-center">
-      <Link to="/create_account" className=" text-red-600 text-sm">
+      <Link to="/kitchen_car_console/create_account" className=" text-red-600 text-sm">
         新規アカウント登録
       </Link>
       </div>
       <div className="mt-5 text-center text-red-600">{errorMessage}</div>
       <div className={`flex mt-5 mb-5 ${isMobile ? "flex-col-reverse" : ""}`}>
         <Link
-          to="/"
+          to="/kitchen_car_console"
           className="flex-1 text-center  h-10 leading-10 mix-w-20 px-10"
         >
           キャンセル
