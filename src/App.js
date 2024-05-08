@@ -13,11 +13,11 @@ function App() {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<KMain />} />
-          <Route path="/positon_register" element={<KPositionRegisterView />} />
-          <Route path="/create_account" element={<KAcountCreateView />} />
-          <Route path="/login" element={<KLogin />} />
-          <Route path="/login" />
+          <Route path="kitchen_car_console/" element={<KMain />} />
+          <Route path="kitchen_car_console/positon_register" element={<KPositionRegisterView />} />
+          <Route path="kitchen_car_console/create_account" element={<KAcountCreateView />} />
+          <Route path="kitchen_car_console/login" element={<KLogin />} />
+          <Route path="kitchen_car_console/login" />
         </Routes>
       </BrowserRouter>
     </div>
