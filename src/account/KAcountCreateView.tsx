@@ -81,7 +81,7 @@ export default function KAcountCreateView() {
       <div className="text-center text-red-600">{errorMessage}</div>
       <div className={`flex mt-5 mb-5 ${isMobile ? "flex-col-reverse" : ""}`}>
         <Link
-          to="/kitchen_car_console"
+          to="/"
           className="flex-1 text-center  h-10 leading-10 mix-w-20 px-10"
         >
           キャンセル
