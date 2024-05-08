@@ -17,7 +17,6 @@ function App() {
           <Route path="kitchen_car_console/positon_register" element={<KPositionRegisterView />} />
           <Route path="kitchen_car_console/create_account" element={<KAcountCreateView />} />
           <Route path="kitchen_car_console/login" element={<KLogin />} />
-          <Route path="kitchen_car_console/login" />
         </Routes>
       </BrowserRouter>
     </div>

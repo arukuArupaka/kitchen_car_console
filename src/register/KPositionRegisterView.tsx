@@ -37,7 +37,7 @@ export default function KPositionRegisterView() {
 
   const goHoem = () => {
     if (window.confirm("入力情報がリセットされます。")) {
-      window.location.href = "kitchen_car_console/";
+      window.location.href = "/";
     }
   };
 
@@ -53,7 +53,7 @@ export default function KPositionRegisterView() {
       setErrorMessage("すべての項目を入力して下さい。");
       return;
     }
-    if (auth.currentUser) {
+    if (auth.currentUser&&auth.currentUser.uid.toString()) {
       setDoc(doc(db, "car_position_BKC", auth.currentUser.uid.toString()), {
         storeName: storeName,
         message: message,
@@ -68,7 +68,7 @@ export default function KPositionRegisterView() {
           "登録しました。この登録は本日に限り有効です。ホーム画面に戻ります。"
         )
       ) {
-        window.location.href = "kitchen_car_console/";
+        window.location.href = "/";
       }
     } else {
       if (
