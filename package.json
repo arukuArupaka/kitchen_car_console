@@ -29,7 +29,7 @@
     "mv": "mv build docs",
     "git": "git add . && git commit && git push origin master",
     "deploy": "npm run rm && npm run build && npm run mv && npm run git",
-    "postbuild": "cp dist/index.html dist/404.html"
+    "postbuild": "cp build/index.html build/404.html"
   },
   "eslintConfig": {
     "extends": [

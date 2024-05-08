@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/kitchen_car_console/static/css/main.1ff3b612.css",
-    "main.js": "/kitchen_car_console/static/js/main.92429018.js",
+    "main.js": "/kitchen_car_console/static/js/main.681a3574.js",
     "static/js/453.0fa229e1.chunk.js": "/kitchen_car_console/static/js/453.0fa229e1.chunk.js",
     "index.html": "/kitchen_car_console/index.html",
     "main.1ff3b612.css.map": "/kitchen_car_console/static/css/main.1ff3b612.css.map",
-    "main.92429018.js.map": "/kitchen_car_console/static/js/main.92429018.js.map",
+    "main.681a3574.js.map": "/kitchen_car_console/static/js/main.681a3574.js.map",
     "453.0fa229e1.chunk.js.map": "/kitchen_car_console/static/js/453.0fa229e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1ff3b612.css",
-    "static/js/main.92429018.js"
+    "static/js/main.681a3574.js"
   ]
 }
