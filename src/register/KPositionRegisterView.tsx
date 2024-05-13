@@ -74,7 +74,7 @@ export default function KPositionRegisterView() {
           }else{
             return
           }
-          alert("error")
+          
         })
       } else {
         if (
@@ -87,6 +87,7 @@ export default function KPositionRegisterView() {
       }
     } catch (e) {
       console.log(e);
+      alert("error")
     }
   };
 
