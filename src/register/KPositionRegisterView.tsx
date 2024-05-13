@@ -42,42 +42,51 @@ export default function KPositionRegisterView() {
   };
 
   const sendData = async () => {
-    if (
-      !storeName ||
-      !message ||
-      !herf ||
-      !startTime ||
-      !endTime ||
-      !imageURI
-    ) {
-      setErrorMessage("すべての項目を入力して下さい。");
-      return;
-    }
-    if (auth.currentUser&&auth.currentUser.uid.toString()) {
-      setDoc(doc(db, "car_position_BKC", auth.currentUser.uid.toString()), {
-        storeName: storeName,
-        message: message,
-        herf: herf,
-        startTime: startTime,
-        endTime: endTime,
-        imageURI: imageURI,
-        time: serverTimestamp(),
-      });
+    try {
       if (
-        !alert(
-          "登録しました。この登録は本日に限り有効です。ホーム画面に戻ります。"
-        )
+        !storeName ||
+        !message ||
+        !herf ||
+        !startTime ||
+        !endTime ||
+        !imageURI
       ) {
-        window.location.href = "/";
+        setErrorMessage("すべての項目を入力して下さい。");
+        return;
       }
-    } else {
-      if (
-        window.confirm(
-          "ログインしていません。リダイレクトします。入力情報がリセットされます。"
-        )
-      ) {
-        window.location.href = "/kitchen_car_console/login";
+      //console.log(auth.currentUser.uid.toString())
+      if (auth.currentUser && auth.currentUser.uid.toString()) {
+        setDoc(doc(db, "car_position_BKC", auth.currentUser.uid.toString()), {
+          storeName: storeName,
+          message: message,
+          herf: herf,
+          startTime: startTime,
+          endTime: endTime,
+          imageURI: imageURI,
+          time: serverTimestamp(),
+        }).then(()=>{
+          if (
+            !alert(
+              "登録しました。この登録は本日に限り有効です。ホーム画面に戻ります。"
+            )
+          ) {
+            window.location.href = "/kitchen_car_console";
+          }else{
+            return
+          }
+          alert("error")
+        })
+      } else {
+        if (
+          window.confirm(
+            "ログインしていません。リダイレクトします。入力情報がリセットされます。"
+          )
+        ) {
+          window.location.href = "/kitchen_car_console/login";
+        }
       }
+    } catch (e) {
+      console.log(e);
     }
   };
 
