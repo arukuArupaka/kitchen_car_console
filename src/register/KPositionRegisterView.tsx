@@ -37,7 +37,7 @@ export default function KPositionRegisterView() {
 
   const goHoem = () => {
     if (window.confirm("入力情報がリセットされます。")) {
-      window.location.href = "/";
+      window.location.href = "/kitchen_car_console";
     }
   };
 
@@ -63,6 +63,10 @@ export default function KPositionRegisterView() {
           startTime: startTime,
           endTime: endTime,
           imageURI: imageURI,
+          position:{
+            longitude:query.get("longitude"),
+            latitude:query.get("latitude")
+          }
           time: serverTimestamp(),
         }).then(()=>{
           if (
