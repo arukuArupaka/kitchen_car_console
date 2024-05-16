@@ -12,6 +12,7 @@ export default function KPositionRegisterView() {
   const [herf, setHerf] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
+  const [url, setUrl] = useState("");
   const [imageURI, setImageURI] = useState(
     "https://firebasestorage.googleapis.com/v0/b/arupaka-kitchen-car.appspot.com/o/kitchen_car_image%2Fdefalut%2Fwagon_1.png?alt=media"
   );
@@ -43,6 +44,10 @@ export default function KPositionRegisterView() {
 
   const sendData = async () => {
     try {
+      if(message.length>500){
+        setErrorMessage("おすすめ情報を500文字以下にしてください");
+        return
+      }
       if (
         !storeName ||
         !message ||
@@ -63,23 +68,23 @@ export default function KPositionRegisterView() {
           startTime: startTime,
           endTime: endTime,
           imageURI: imageURI,
-          position:{
-            longitude:query.get("longitude"),
-            latitude:query.get("latitude")
+          url:url,
+          position: {
+            longitude: query.get("longitude"),
+            latitude: query.get("latitude"),
           },
           time: serverTimestamp(),
-        }).then(()=>{
+        }).then(() => {
           if (
             !alert(
               "登録しました。この登録は本日に限り有効です。ホーム画面に戻ります。"
             )
           ) {
             window.location.href = "/kitchen_car_console";
-          }else{
-            return
+          } else {
+            return;
           }
-          
-        })
+        });
       } else {
         if (
           window.confirm(
@@ -91,14 +96,14 @@ export default function KPositionRegisterView() {
       }
     } catch (e) {
       console.log(e);
-      alert("error")
+      alert("error");
     }
   };
 
   return (
     <div className="max-w-4xl mx-auto p-3 pt-20">
       <h1 className="font-bold text-xl text-center mb-10">出店情報登録</h1>
-      <h1 className="font-bold text-lg">店名登録</h1>
+      <h1 className="font-bold text-lg">店名登録（必須）</h1>
       <input
         className="w-full border-2 mb-5"
         type="text"
@@ -106,16 +111,8 @@ export default function KPositionRegisterView() {
         value={storeName}
         placeholder="店舗名を入力してください"
       />
-      <h1 className="font-bold text-lg">おすすめ情報を入力してください</h1>
-      <input
-        className="w-full border-2 mb-5"
-        type="text"
-        onChange={(event) => setMessage(event.target.value)}
-        value={message}
-        placeholder="おすすめ情報を入力してください"
-      />
       <h1 className="font-bold text-lg">
-        検索にヒットさせる単語を入力してください。（　#唐揚げ　#安い　など）
+        検索にヒットさせる単語を入力してください。（　#唐揚げ　#安い　など）（必須）
       </h1>
       <input
         className="w-full border-2 mb-5"
@@ -124,7 +121,9 @@ export default function KPositionRegisterView() {
         value={herf}
         placeholder="検索にヒットさせる単語を入力してください"
       />
-      <h1 className="font-bold text-lg">本日の営業時間を入力してください</h1>
+      <h1 className="font-bold text-lg">
+        本日の営業時間を入力してください（必須）
+      </h1>
       <input
         className="border-2 mb-5"
         type="time"
@@ -139,8 +138,28 @@ export default function KPositionRegisterView() {
         onChange={(event) => setEndTime(event.target.value)}
       />
       まで
+      <h1 className="font-bold text-lg">SNSなどのリンクを入力してください。</h1>
+      <input
+        className="w-full border-2 mb-5"
+        type="text"
+        onChange={(event) => setUrl(event.target.value)}
+        value={url}
+        placeholder="SNSなどのリンクを入力してください"
+      />
+      <h1 className="font-bold text-lg">
+        おすすめ情報を入力してください（必須）
+      </h1>
+      <textarea
+        className="w-full border-2 h-60"
+        onChange={(event) => setMessage(event.target.value)}
+        value={message}
+        placeholder="おすすめ情報を入力してください"
+      />
+      <div className={message.length<=500?"text-end":"text-end text-red-600"}>
+      {message.length+"/500 文字"}
+      </div>
       <div>
-        <h1 className="font-bold text-lg">キッチンカーの画像を選択</h1>
+        <h1 className="font-bold text-lg mt-5">キッチンカーの画像を選択（必須）</h1>
         <div className="flex flex-wrap">
           {car_defalue_image.map((data) => {
             return (
