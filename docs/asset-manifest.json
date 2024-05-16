@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/kitchen_car_console/static/css/main.1ff3b612.css",
-    "main.js": "/kitchen_car_console/static/js/main.4e2e2821.js",
+    "main.css": "/kitchen_car_console/static/css/main.aa7e1eaf.css",
+    "main.js": "/kitchen_car_console/static/js/main.48eb55f5.js",
     "static/js/453.0fa229e1.chunk.js": "/kitchen_car_console/static/js/453.0fa229e1.chunk.js",
     "index.html": "/kitchen_car_console/index.html",
-    "main.1ff3b612.css.map": "/kitchen_car_console/static/css/main.1ff3b612.css.map",
-    "main.4e2e2821.js.map": "/kitchen_car_console/static/js/main.4e2e2821.js.map",
+    "main.aa7e1eaf.css.map": "/kitchen_car_console/static/css/main.aa7e1eaf.css.map",
+    "main.48eb55f5.js.map": "/kitchen_car_console/static/js/main.48eb55f5.js.map",
     "453.0fa229e1.chunk.js.map": "/kitchen_car_console/static/js/453.0fa229e1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ff3b612.css",
-    "static/js/main.4e2e2821.js"
+    "static/css/main.aa7e1eaf.css",
+    "static/js/main.48eb55f5.js"
   ]
 }
