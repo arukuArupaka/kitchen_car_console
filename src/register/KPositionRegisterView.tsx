@@ -66,7 +66,7 @@ export default function KPositionRegisterView() {
           position:{
             longitude:query.get("longitude"),
             latitude:query.get("latitude")
-          }
+          },
           time: serverTimestamp(),
         }).then(()=>{
           if (
